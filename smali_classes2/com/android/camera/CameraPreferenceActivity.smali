@@ -1628,16 +1628,6 @@
 .method private installQRCodeReceiver()V
     .locals 1
 
-    new-instance v0, Lcom/android/camera/CameraPreferenceActivity$2;
-
-    invoke-direct {v0, p0}, Lcom/android/camera/CameraPreferenceActivity$2;-><init>(Lcom/android/camera/CameraPreferenceActivity;)V
-
-    const/4 p0, 0x0
-
-    new-array p0, p0, [Ljava/lang/Void;
-
-    invoke-virtual {v0, p0}, Landroid/os/AsyncTask;->execute([Ljava/lang/Object;)Landroid/os/AsyncTask;
-
     return-void
 .end method
 

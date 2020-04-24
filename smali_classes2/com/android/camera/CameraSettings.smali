@@ -8992,11 +8992,7 @@
 .method public static isQRCodeReceiverAvailable(Landroid/content/Context;)Z
     .locals 1
 
-    const-string v0, "com.xiaomi.scanner"
-
-    invoke-static {p0, v0}, Lcom/android/camera/Util;->isPackageAvailable(Landroid/content/Context;Ljava/lang/String;)Z
-
-    move-result p0
+    const/4 p0, 0x0
 
     return p0
 .end method
@@ -9097,64 +9093,8 @@
 .method public static isScanQRCode(Landroid/content/Context;)Z
     .locals 2
 
-    invoke-static {}, Lcom/android/camera/CameraSettings;->isFrontCamera()Z
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    invoke-static {p0}, Lcom/android/camera/CameraSettings;->isQRCodeReceiverAvailable(Landroid/content/Context;)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-static {}, Lcom/mi/config/b;->pk()Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    invoke-static {}, Lcom/mi/config/b;->ie()Z
-
-    move-result p0
-
-    if-nez p0, :cond_0
-
-    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemGlobal()Lcom/android/camera/data/data/global/DataItemGlobal;
-
-    move-result-object p0
-
-    const v0, 0x7f0f03d1
-
-    invoke-static {v0}, Lcom/android/camera/CameraSettings;->getString(I)Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    const-string v1, "pref_scan_qrcode_key"
-
-    invoke-virtual {p0, v1, v0}, Lcom/android/camera/data/data/DataItemBase;->getBoolean(Ljava/lang/String;Z)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_0
-
-    const/4 p0, 0x1
-
-    goto :goto_0
-
-    :cond_0
     const/4 p0, 0x0
 
-    :goto_0
     return p0
 .end method
 
