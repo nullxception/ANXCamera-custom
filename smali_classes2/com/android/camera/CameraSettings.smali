@@ -4118,52 +4118,7 @@
 
     const/4 v0, 0x1
 
-    if-eqz p1, :cond_0
-
     return v0
-
-    :cond_0
-    sget-boolean p1, Lcom/mi/config/b;->fn:Z
-
-    if-eqz p1, :cond_1
-
-    return v0
-
-    :cond_1
-    invoke-static {}, Lcom/android/camera/data/DataRepository;->dataItemFeature()Lcom/mi/config/a;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/mi/config/a;->vb()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    return v0
-
-    :cond_2
-    invoke-static {}, Lcom/mi/config/b;->ie()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_3
-
-    return v0
-
-    :cond_3
-    invoke-static {p0}, Lcom/android/camera/CameraSettings;->isInAllRecordModeSet(I)Z
-
-    move-result p0
-
-    if-eqz p0, :cond_4
-
-    return v0
-
-    :cond_4
-    const/4 p0, 0x0
-
-    return p0
 .end method
 
 .method public static getScreenLightBrightness()I
